@@ -21,7 +21,7 @@ All group members contributed equally to every stage of this project. We conduct
 
 ---
 
-## 1. 🎥 The Evolution (Visual Proof)
+## 1.  The Evolution (Visual Proof)
 
 Evolution video of the Agent starting from untrained, followed by half-trained and fully trained versions.
 
@@ -29,7 +29,7 @@ https://github.com/user-attachments/assets/f069c6c7-7323-44d6-a5bb-7b904334765b
 
 ---
 
-## 2. 📁 Repository Structure
+## 2.  Repository Structure
 
 To maintain high **Repo Hygiene**, our project is organized as follows:
 
@@ -42,12 +42,12 @@ To maintain high **Repo Hygiene**, our project is organized as follows:
 
 ---
 
-## 3. 🧠 Methodology
+## 3.  Methodology
 
 ### The Goal
 The objective was to train an agent in the `highway-fast-v0` environment to maximize speed while avoiding collisions. The agent controls a vehicle in a 4-lane highway with dense traffic consisting of **30 vehicles**.
 
-### 🚗 Agent Capabilities (Actions & States)
+###  Agent Capabilities (Actions & States)
 
 **Observation Space (What the Agent Sees):**
 We use the **Kinematics** observation type. The agent perceives a matrix representing:
@@ -107,7 +107,7 @@ The learning curve demonstrates a distinct three-phase progression:
 
 ---
 
-## 5. 🛑 Challenges & Failures
+## 5.  Challenges & Failures
 
 ### 1. Stuck at Low Speeds
 *Problem:* The agent was sitting at low speeds to avoid risk.
@@ -132,7 +132,7 @@ The learning curve demonstrates a distinct three-phase progression:
 
 ---
 
-## 6. 🛠️ Installation & Usage
+## 6.  Installation & Usage
 
 To ensure the environment is set up correctly (as required by the **Setup** criteria):
 
