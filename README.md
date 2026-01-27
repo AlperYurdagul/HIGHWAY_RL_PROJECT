@@ -5,7 +5,7 @@
 *Authors:*
 * *Belamir Korkmaz* - [2101600]
 * *Eren Yiğit Ateş* - [2202893]
-* *Tarık Tanırcan* - [Student ID]
+* *Tarık Tanırcan* - [2103149]
 
 *Frameworks:* Gymnasium, Highway-Env, PyTorch
 
