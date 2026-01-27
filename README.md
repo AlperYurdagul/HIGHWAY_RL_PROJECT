@@ -65,7 +65,7 @@ Where:
 
 The agent was trained for **500,000 timesteps** using **multi-core (asynchronous) vectorization**.
 
-![Graph](<img width="1000" height="500" alt="training_graph" src="https://github.com/user-attachments/assets/8c494bdb-9aad-4636-8c59-c79636c9433c" />)
+<img width="1000" height="500" alt="training_graph" src="https://github.com/user-attachments/assets/86693dd3-3cb3-4090-9403-ebc5bf0dbba3" />
 
 
 ### Commentary
