@@ -24,7 +24,7 @@ All group members contributed equally to every stage of this project. We conduct
 ## 1.  The Evolution (Visual Proof)
 
 Evolution video of the Agent starting from untrained, followed by half-trained and fully trained versions.
-
+Note: The model being executed in each segment of the video is displayed in the bottom-left corner of the screen for clarity.
 
 https://github.com/user-attachments/assets/a3a9b9b3-5bc6-40e3-832b-181a41c3cac9
 
