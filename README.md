@@ -89,12 +89,11 @@ The total reward $R_t$ at step $t$ is calculated based on our configuration:
 $$R_t = R_{speed} + P_{Collision} + P_{LaneChange}$$
 
 Where:
-* *Speed Reward ($R_{speed}$):* Linearly mapped from the range **$[35, 50]$** km/h. Driving below 35 km/h yields 0 reward.
-* *Collision Penalty ($P_{Collision} = -125.0$):* A severe penalty to strictly forbid collisions.
-* *Lane Change Penalty ($P_{LaneChange} = -1.2$):* A fee to prevent unnecessary zigzagging.
+* **Speed Reward ($R_{speed}$):** Linearly mapped from the range $[35, 50]$ km/h. Driving below 35 km/h yields 0 reward, while driving at max speed yields a **+1.0** reward.
+* **Collision Penalty ($P_{Collision}$):** A severe penalty (**-125.0**) to strictly forbid collisions.
+* **Lane Change Penalty ($P_{LaneChange}$):** A fee (**-1.2**) to prevent unnecessary zigzagging.
 
 ---
-
 ## 4.  Training Analysis
 
 The agent was trained for **500,000 timesteps** using **multi-core (asynchronous) vectorization**.
