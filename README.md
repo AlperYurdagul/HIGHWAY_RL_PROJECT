@@ -93,7 +93,7 @@ Where:
 
 ---
 
-## 4. 📈 Training Analysis
+## 4.  Training Analysis
 
 The agent was trained for **500,000 timesteps** using **multi-core (asynchronous) vectorization**.
 
