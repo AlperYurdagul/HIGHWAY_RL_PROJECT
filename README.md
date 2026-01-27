@@ -25,7 +25,9 @@ All group members contributed equally to every stage of this project. We conduct
 
 Evolution video of the Agent starting from untrained, followed by half-trained and fully trained versions.
 
-https://github.com/user-attachments/assets/f069c6c7-7323-44d6-a5bb-7b904334765b
+
+https://github.com/user-attachments/assets/3da2a0f2-ca84-4a51-b6dc-4a71d842aa65
+
 
 ---
 
