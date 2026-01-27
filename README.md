@@ -1,4 +1,5 @@
 # HIGHWAY_RL_PROJECT
+
 # Autonomous Highway Driving Agent (DQN)
 
 *Authors:*
@@ -14,9 +15,9 @@
 
 All group members contributed equally to every stage of this project. We conducted regular synchronous working sessions to:
 
-1.  Pair-program the codebase and debug implementation issues.
-2.  Monitor and tune the training processes (optimizing for **500,000 steps** and fine-tuning hyperparameters).
-3.  Co-author this technical report and analyze the resulting metrics.
+1. Pair-program the codebase and debug implementation issues.
+2. Monitor and tune the training processes (optimizing for **500,000 steps** and fine-tuning hyperparameters).
+3. Co-author this technical report and analyze the resulting metrics.
 
 ---
 
@@ -26,13 +27,44 @@ Evolution video of the Agent starting from untrained, followed by half-trained a
 
 https://github.com/user-attachments/assets/f069c6c7-7323-44d6-a5bb-7b904334765b
 
+---
+
+## 2. 📁 Repository Structure
+
+To maintain high **Repo Hygiene**, our project is organized as follows:
+
+* **`src/`**: Contains core logic, including `agent.py` for DQN architecture and `config.py` for centralized hyperparameters.
+* **`models/`**: Stores serialized `.pth` files for the untrained, half-trained, and final models.
+* **`videos/`**: Contains recorded evolution videos and simulation clips.
+* **`train.py`**: Entry point for starting the multi-core (asynchronous) training process.
+* **`simulasyon.py`**: Script to visualize and record the agent's performance.
+* **`requirements.txt`**: List of required Python libraries for reproducibility.
 
 ---
 
-## 2. Methodology
+## 3. 🧠 Methodology
 
 ### The Goal
 The objective was to train an agent in the `highway-fast-v0` environment to maximize speed while avoiding collisions. The agent controls a vehicle in a 4-lane highway with dense traffic consisting of **30 vehicles**.
+
+### 🚗 Agent Capabilities (Actions & States)
+
+**Observation Space (What the Agent Sees):**
+We use the **Kinematics** observation type. The agent perceives a matrix representing:
+* **Presence**: Slot availability of nearby vehicles.
+* **Coordinates**: Relative $x$ and $y$ positions of surrounding cars.
+* **Velocities**: The speed of neighbors in both $x$ and $y$ directions.
+
+**Action Space (What the Agent Does):**
+The agent operates with a **DiscreteMetaAction** space:
+
+| Action ID | Action Name | Description |
+| :--- | :--- | :--- |
+| **0** | **LANE_LEFT** | Switches to the lane on the left if safe. |
+| **1** | **IDLE** | Maintains the current lane and speed. |
+| **2** | **LANE_RIGHT** | Switches to the lane on the right if safe. |
+| **3** | **FASTER** | Increases speed to reach the $[35, 50]$ km/h target. |
+| **4** | **SLOWER** | Decreases speed to avoid obstacles. |
 
 ### The Model Architecture
 We utilized a *Deep Q-Network (DQN)* because it yielded better results for this specific discrete action space.
@@ -61,22 +93,21 @@ Where:
 
 ---
 
-## 3. Training Analysis
+## 4. 📈 Training Analysis
 
 The agent was trained for **500,000 timesteps** using **multi-core (asynchronous) vectorization**.
 
-<img width="1000" height="500" alt="training_graph" src="https://github.com/user-attachments/assets/86693dd3-3cb3-4090-9403-ebc5bf0dbba3" />
-
+<img width="100%" alt="training_graph" src="https://github.com/user-attachments/assets/86693dd3-3cb3-4090-9403-ebc5bf0dbba3" />
 
 ### Commentary
 The learning curve demonstrates a distinct three-phase progression:
-1.  *Initial Instability (0 - 200k):* The agent acts randomly due to high epsilon, resulting in frequent collisions.
-2.  *Exploration & Learning (200k - 350k):* As epsilon decays toward 5%, the agent starts to prioritize staying in lanes and avoiding the **-125.0** penalty.
-3.  *Convergence & Mastery (350k+):* The agent "cracks" the code—realizing that maintaining speed between **35-50 km/h** is the only way to maximize the function.
+1. *Initial Instability (0 - 200k):* The agent acts randomly due to high epsilon, resulting in frequent collisions.
+2. *Exploration & Learning (200k - 350k):* As epsilon decays toward 5%, the agent starts to prioritize staying in lanes and avoiding the **-125.0** penalty.
+3. *Convergence & Mastery (350k+):* The agent "cracks" the code—realizing that maintaining speed between **35-50 km/h** is the only way to maximize the function.
 
 ---
 
-## 4. Challenges & Failures
+## 5. 🛑 Challenges & Failures
 
 ### 1. Stuck at Low Speeds
 *Problem:* The agent was sitting at low speeds to avoid risk.
@@ -101,7 +132,24 @@ The learning curve demonstrates a distinct three-phase progression:
 
 ---
 
-## 5. Results & Evaluation
+## 6. 🛠️ Installation & Usage
+
+To ensure the environment is set up correctly (as required by the **Setup** criteria):
+
+1. **Clone the Repository**: Ensure all source files and the `models/` folder are present.
+2. **Setup & Execution**:
+   Use the commands below to install dependencies and run the project:
+   ```bash
+   # 1. Install Dependencies
+   pip install -r requirements.txt
+
+   # 2. Run Training (Starts training the agent from scratch)
+   python train.py
+
+   # 3. Run Simulation (Watch the fully trained agent drive)
+   python simulasyon.py
+
+## 7. Results & Evaluation
 
 Comparison based on training logs and `simulasyon.py` results:
 
