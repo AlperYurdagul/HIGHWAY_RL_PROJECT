@@ -1,0 +1,9 @@
+gymnasium
+highway-env
+torch
+numpy
+matplotlib
+pandas
+imageio
+pygame
+shutil
