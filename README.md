@@ -2,22 +2,9 @@
 
 # Autonomous Highway Driving Agent (DQN)
 
-*Authors:*
-* *Belamir Korkmaz* - [2101600]
-* *Eren Yiğit Ateş* - [2202893]
-* *Tarık Tanırcan* - [2103149]
+*Author:* Alper Yurdagül
 
 *Frameworks:* Gymnasium, Highway-Env, PyTorch
-
----
-
-## Team Contribution Statement
-
-All group members contributed equally to every stage of this project. We conducted regular synchronous working sessions to:
-
-1. Pair-program the codebase and debug implementation issues.
-2. Monitor and tune the training processes (optimizing for **500,000 steps** and fine-tuning hyperparameters).
-3. Co-author this technical report and analyze the resulting metrics.
 
 ---
 
